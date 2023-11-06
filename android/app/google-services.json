@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "645799437593",
+    "project_id": "skillswap-5d6a9",
+    "storage_bucket": "skillswap-5d6a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645799437593:android:17f9da2eb47c3b6a845188",
+        "android_client_info": {
+          "package_name": "com.crackincode.skillswap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHVmy-EuZ4mLNXSNNCjgaEaRw2wmYMEqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
