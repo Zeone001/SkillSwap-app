@@ -1,4 +1,4 @@
-package com.example.skill_swap
+package com.crackincode.skill_swap
 
 import io.flutter.embedding.android.FlutterActivity
 

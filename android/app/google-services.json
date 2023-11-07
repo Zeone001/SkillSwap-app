@@ -12,7 +12,20 @@
           "package_name": "com.crackincode.skillswap"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "645799437593-9tcoa0g6v96obpq7emo9v03vihso9q9o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.crackincode.skillswap",
+            "certificate_hash": "0e255fe8bb024f7e646295003b531d1b44b876ac"
+          }
+        },
+        {
+          "client_id": "645799437593-1hob3bnvgthcl2h1rgeeq2poc8lgs27e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAHVmy-EuZ4mLNXSNNCjgaEaRw2wmYMEqQ"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "645799437593-1hob3bnvgthcl2h1rgeeq2poc8lgs27e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
