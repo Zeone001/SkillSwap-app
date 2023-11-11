@@ -4,7 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:skill_swap/const/routes.dart';
+import 'package:skill_swap/const/app_colors.dart';
+import 'package:skill_swap/utils/routes.dart';
 import 'package:skill_swap/pages/auth/login/cubit/login_cubit.dart';
 import 'package:skill_swap/pages/auth/login/cubit/login_event.dart';
 import 'package:skill_swap/pages/auth/register/register_page.dart';
@@ -32,64 +33,49 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          Blur(
-            blur: 10.0,
-            blurColor: Colors.blueGrey,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage(
-                    "https://images.unsplash.com/photo-1607748851687-ba9a10438621?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-                  ),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.white,
           ),
           SafeArea(
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               controller: ScrollController(),
               child: Container(
-                padding: const EdgeInsets.all(40.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Theme(
-                      data: ThemeData(
-                        textTheme: GoogleFonts.pacificoTextTheme().copyWith(
-                          displayLarge: TextStyle(
-                            color: Colors.grey[800],
-                          ),
-                          displayMedium: TextStyle(
-                            color: Colors.grey[800],
-                          ),
-                          bodyLarge: TextStyle(
-                            color: Colors.grey[800],
-                          ),
-                          bodyMedium: TextStyle(
-                            color: Colors.grey[800],
-                          ),
-                        ),
-                      ),
-                      child: Text(
-                        "SkillSwap",
-                        style: GoogleFonts.pacifico(
-                          color: Colors.white,
-                          fontSize: 40.0,
-                        ),
-                      ),
+                    Image.asset(
+                      "assets/images/ic_app.png",
+                      width: 150.0,
+                      height: 150.0,
+                      fit: BoxFit.fill,
                     ),
                     const SizedBox(
-                      height: 30.0,
+                      height: 16.0,
+                    ),
+                    const Text(
+                      "Welcome To",
+                      style: TextStyle(
+                          fontSize: 22.0, fontWeight: FontWeight.w500),
+                    ),
+                    const Text(
+                      "Skill Swab",
+                      style: TextStyle(
+                          fontSize: 22.0, fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(
+                      height: 60.0,
                     ),
                     Form(
                       child: Column(
                         children: [
                           TextFormField(
+                            style: const TextStyle(
+                                fontSize: 19, fontWeight: FontWeight.w500),
                             autofillHints: const [AutofillHints.email],
                             keyboardType: TextInputType.emailAddress,
                             focusNode: _emailNode,
@@ -107,51 +93,52 @@ class _LoginPageState extends State<LoginPage> {
                               FocusScope.of(context).requestFocus(_emailNode);
                             },
                             decoration: const InputDecoration(
-                              hintText: "Your email",
+                              hintText: "Email",
                               prefixIcon: Padding(
                                 padding: EdgeInsets.all(16.0),
-                                child: Icon(Icons.person),
+                                child: Icon(Icons.email),
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 16.0),
-                            child: TextFormField(
-                              textInputAction: TextInputAction.done,
-                              focusNode: _passwordNode,
-                              autofillHints: const [
-                                AutofillHints.password,
-                                AutofillHints.newPassword
-                              ],
-                              controller: _passwordController,
-                              keyboardType: TextInputType.visiblePassword,
-                              obscureText: !_isShowPassword,
-                              cursorColor: Colors.blueGrey,
-                              onFieldSubmitted: (value) {
-                                FocusScope.of(context)
-                                    .requestFocus(_passwordNode);
-                              },
-                              decoration: InputDecoration(
-                                hintText: "Your password",
-                                prefixIcon: const Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 16.0),
-                                  child: Icon(Icons.lock),
-                                ),
-                                suffixIcon: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 5.0),
-                                  child: IconButton(
-                                    onPressed: () {
-                                      setState(() =>
-                                          _isShowPassword = !_isShowPassword);
-                                    },
-                                    icon: Icon(
-                                      _isShowPassword
-                                          ? Icons.visibility
-                                          : Icons.visibility_off,
-                                      size: 24.0,
-                                    ),
+                          const SizedBox(
+                            height: 16.0,
+                          ),
+                          TextFormField(
+                            style: const TextStyle(
+                                fontSize: 19, fontWeight: FontWeight.w500),
+                            textInputAction: TextInputAction.done,
+                            focusNode: _passwordNode,
+                            autofillHints: const [
+                              AutofillHints.password,
+                              AutofillHints.newPassword
+                            ],
+                            controller: _passwordController,
+                            keyboardType: TextInputType.visiblePassword,
+                            obscureText: !_isShowPassword,
+                            cursorColor: Colors.blueGrey,
+                            onFieldSubmitted: (value) {
+                              FocusScope.of(context)
+                                  .requestFocus(_passwordNode);
+                            },
+                            decoration: InputDecoration(
+                              hintText: "Password",
+                              prefixIcon: const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                                child: Icon(Icons.lock),
+                              ),
+                              suffixIcon: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 5.0),
+                                child: IconButton(
+                                  onPressed: () {
+                                    setState(() =>
+                                        _isShowPassword = !_isShowPassword);
+                                  },
+                                  icon: Icon(
+                                    _isShowPassword
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    size: 24.0,
                                   ),
                                 ),
                               ),
@@ -163,60 +150,110 @@ class _LoginPageState extends State<LoginPage> {
                             child: ElevatedButton(
                               onPressed: _submit,
                               child: Text(
-                                "Login".toUpperCase(),
+                                "masuk".toUpperCase(),
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 19),
                               ),
                             ),
-                          ),
-                          const SizedBox(height: 16.0),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              const Text(
-                                "Don’t have an Account ? ",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const RegisterPage()),
-                                  );
-                                },
-                                child: const Text(
-                                  "Sign Up",
-                                  style: TextStyle(
-                                    color: Colors.orange,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              )
-                            ],
                           ),
                         ],
                       ),
                     ),
                     const SizedBox(
-                      height: 30.0,
+                      height: 60.0,
                     ),
-                    if (MediaQuery.of(context).viewInsets.bottom == 0)
-                      InkWell(
-                        onTap: () =>
-                            context.read<LoginCubit>().loginWithGoogle(context),
-                        child: CircleAvatar(
-                          radius: 26.0,
-                          backgroundColor: Colors.white,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image.network(
-                              "https://i.ibb.co/7WBNQ3M/281764.png",
+                    // if (MediaQuery.of(context).viewInsets.bottom == 0)
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            InkWell(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(8.0),
+                                ),
+                                onTap: () {},
+                                child: Container(
+                                  padding: const EdgeInsets.all(15.0),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(8.0),
+                                      ),
+                                      border: Border.all(
+                                          width: 1, color: AppColors.redCream)),
+                                  child: Image.asset(
+                                    "assets/images/ic_google.png",
+                                    width: 35.0,
+                                    height: 35.0,
+                                    fit: BoxFit.fill,
+                                  ),
+                                )),
+                            const SizedBox(
+                              width: 10.0,
                             ),
-                          ),
+                            const Text(
+                              "Atau",
+                              style: TextStyle(
+                                  color: AppColors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 20.00),
+                            ),
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            InkWell(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8.0),
+                              ),
+                              onTap: () {},
+                              child: Container(
+                                padding: const EdgeInsets.all(15.0),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(8.0),
+                                    ),
+                                    border: Border.all(
+                                        width: 1, color: AppColors.redCream)),
+                                child: Image.asset(
+                                  "assets/images/ic_facebook.png",
+                                  width: 35.0,
+                                  height: 35.0,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
+                        const SizedBox(
+                          height: 16.0,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            const Text(
+                              "Belum Punya Akun ? ",
+                              style: TextStyle(
+                                  color: AppColors.black, fontSize: 20.00),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  Routes.register,
+                                );
+                              },
+                              child: const Text(
+                                "Buat Baru",
+                                style: TextStyle(
+                                    color: AppColors.purple,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 20.00),
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),

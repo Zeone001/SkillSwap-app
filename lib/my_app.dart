@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:skill_swap/const/routes.dart';
+import 'package:skill_swap/const/app_colors.dart';
+import 'package:skill_swap/pages/auth/register/otp_page.dart';
+import 'package:skill_swap/pages/auth/register/set_profile_page.dart';
+import 'package:skill_swap/pages/chat/chat_page.dart';
+import 'package:skill_swap/pages/chat/chat_room_page.dart';
+import 'package:skill_swap/pages/detail/detail_page.dart';
+import 'package:skill_swap/pages/exchange/exchange_list_page.dart';
+import 'package:skill_swap/pages/notification/notification_page.dart';
+import 'package:skill_swap/pages/profile/edit_profile_page.dart';
+import 'package:skill_swap/utils/routes.dart';
+import 'package:skill_swap/const/theme_app.dart';
 import 'package:skill_swap/injector_container.dart';
 import 'package:skill_swap/pages/auth/login/cubit/login_cubit.dart';
 import 'package:skill_swap/pages/auth/login/login_page.dart';
 import 'package:skill_swap/pages/auth/register/register_page.dart';
 import 'package:skill_swap/pages/home/home_page.dart';
+import 'package:skill_swap/pages/onboarding/onboarding_page.dart';
 import 'package:skill_swap/pages/splash/splash_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -21,32 +33,9 @@ class MyApp extends StatelessWidget {
             providers: [BlocProvider<LoginCubit>(create: (context) => sl())],
             child: MaterialApp(
               title: 'SkillSwap',
-              initialRoute: Routes.login,
-              theme: ThemeData(
-                primaryColor: Colors.blueGrey,
-                scaffoldBackgroundColor: Colors.white,
-                elevatedButtonTheme: ElevatedButtonThemeData(
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    backgroundColor: Colors.blueGrey,
-                    shape: const StadiumBorder(),
-                    maximumSize: const Size(double.infinity, 48),
-                    minimumSize: const Size(double.infinity, 48),
-                  ),
-                ),
-                inputDecorationTheme: const InputDecorationTheme(
-                  filled: true,
-                  fillColor: Color(0xFFF1E6FF),
-                  iconColor: Colors.blueGrey,
-                  prefixIconColor: Colors.blueGrey,
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-              ),
+              home: EditProfilePage(),
+              // initialRoute: Routes.login,
+              theme: getAppTheme(context),
               routes: {
                 Routes.splash: (_) => const SplashPage(),
                 Routes.home: (_) => const HomePage(),

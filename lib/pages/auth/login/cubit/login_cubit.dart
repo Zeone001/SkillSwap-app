@@ -2,7 +2,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skill_swap/const/routes.dart';
+import 'package:skill_swap/utils/routes.dart';
 import 'package:skill_swap/pages/auth/login/cubit/login_event.dart';
 import 'package:skill_swap/pages/auth/login/cubit/login_state.dart';
 import 'package:google_sign_in/google_sign_in.dart';
