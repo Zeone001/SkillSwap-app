@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:skill_swap/const/app_colors.dart';
 import 'package:skill_swap/utils/routes.dart';
 
@@ -57,16 +58,9 @@ class OnboardingPage extends StatelessWidget {
                         tag: "onboarding_btn",
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.pushReplacementNamed(
-                              context,
-                              Routes.login,
-                            );
+                            _setIsFirstOpenAppTrue(context);
                           },
                           style: const ButtonStyle(
-                              // fixedSize:
-                              //     MaterialStatePropertyAll(Size(201, 59)),
-                              // maximumSize: MaterialStatePropertyAll(
-                              //     Size(double.infinity, 59)),
                               shape: MaterialStatePropertyAll(
                                   RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(
@@ -88,6 +82,19 @@ class OnboardingPage extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  void _setIsFirstOpenAppTrue(BuildContext context) async {
+    // Membuka atau membuat kotak Hive
+    final Box<bool> box = await Hive.openBox<bool>('app_settings');
+
+    // Menyimpan nilai true ke dalam kotak
+    box.put('isFirstOpenApp', true);
+
+    Navigator.pushReplacementNamed(
+      context,
+      Routes.login,
     );
   }
 }

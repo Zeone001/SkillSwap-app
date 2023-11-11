@@ -33,12 +33,12 @@ class MyApp extends StatelessWidget {
             providers: [BlocProvider<LoginCubit>(create: (context) => sl())],
             child: MaterialApp(
               title: 'SkillSwap',
-              home: EditProfilePage(),
-              // initialRoute: Routes.login,
+              initialRoute: Routes.splash,
               theme: getAppTheme(context),
               routes: {
                 Routes.splash: (_) => const SplashPage(),
                 Routes.home: (_) => const HomePage(),
+                Routes.onboarding: (_) => const OnboardingPage(),
 
                 /// Auth
                 Routes.login: (_) => const LoginPage(),

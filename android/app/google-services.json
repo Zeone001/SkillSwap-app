@@ -1,42 +1,49 @@
 {
   "project_info": {
-    "project_number": "645799437593",
-    "project_id": "skillswap-5d6a9",
-    "storage_bucket": "skillswap-5d6a9.appspot.com"
+    "project_number": "761066110191",
+    "project_id": "mobile-app-school-7c6f1",
+    "storage_bucket": "mobile-app-school-7c6f1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:645799437593:android:17f9da2eb47c3b6a845188",
+        "mobilesdk_app_id": "1:761066110191:android:435beef590cc075f4eaf1a",
         "android_client_info": {
-          "package_name": "com.crackincode.skillswap"
+          "package_name": "com.zeone.mobileappschool"
         }
       },
       "oauth_client": [
         {
-          "client_id": "645799437593-9tcoa0g6v96obpq7emo9v03vihso9q9o.apps.googleusercontent.com",
+          "client_id": "761066110191-425ro90brh5noqbcm7gej19a74qntfjh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.crackincode.skillswap",
-            "certificate_hash": "0e255fe8bb024f7e646295003b531d1b44b876ac"
+            "package_name": "com.zeone.mobileappschool",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
           }
         },
         {
-          "client_id": "645799437593-1hob3bnvgthcl2h1rgeeq2poc8lgs27e.apps.googleusercontent.com",
+          "client_id": "761066110191-b03527dr2ins95da7685q5158h14m95q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAHVmy-EuZ4mLNXSNNCjgaEaRw2wmYMEqQ"
+          "current_key": "AIzaSyCE-a-3on47AJoFqne0zTUboDUCYlI2AAs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "645799437593-1hob3bnvgthcl2h1rgeeq2poc8lgs27e.apps.googleusercontent.com",
+              "client_id": "761066110191-b03527dr2ins95da7685q5158h14m95q.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "761066110191-edad2ubv5uk70483v05kb6s1kr1hh65p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zeone.mobileappschool"
+              }
             }
           ]
         }
